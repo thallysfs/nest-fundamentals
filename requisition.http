@@ -1,0 +1,27 @@
+# Variables
+@baseUrl = http://localhost:3333
+
+GET {{baseUrl}}/api/hello
+
+###
+
+POST {{baseUrl}}/accounts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Thallys1",
+  "email": "thallys1hotmail.com",
+  "password": "123"
+}
+
+###
+
+# @name authenticate
+POST {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "email": "thallys@hotmail.com",
+  "senha": "123456"
+}
