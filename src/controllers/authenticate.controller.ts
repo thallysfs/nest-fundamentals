@@ -12,7 +12,6 @@ import { PrismaService } from 'src/prisma/prisma.service'
 import { z } from 'zod'
 
 const authenticateBodySchema = z.object({
-  name: z.string(),
   email: z.email(),
   password: z.string(),
 })
@@ -49,6 +48,8 @@ export class AuthenticateController {
 
     const accesToken = this.jwt.sign({ sub: user.id })
 
-    return token
+    return {
+      acess_token: accesToken,
+    }
   }
 }

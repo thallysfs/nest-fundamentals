@@ -1,5 +1,6 @@
 # Variables
 @baseUrl = http://localhost:3333
+@authToken = {{authenticate.response.body.acess_token}}
 
 GET {{baseUrl}}/api/hello
 
@@ -10,8 +11,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Thallys1",
-  "email": "thallys1hotmail.com",
+  "name": "Thallys",
+  "email": "thallys2@hotmail.com",
   "password": "123"
 }
 
@@ -22,6 +23,13 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "thallys@hotmail.com",
-  "senha": "123456"
+  "email": "thallys2@hotmail.com",
+  "password": "123"
 }
+
+###
+
+# @name create_question
+POST {{baseUrl}}/questions
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
